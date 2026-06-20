@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Primer Hola Mundo en la Nube</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 40px; text-align: center; }
+        .container { max-width: 600px; background: white; margin: 0 auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; margin-bottom: 10px; }
+        p.sub { color: #5f6368; margin-bottom: 30px; }
+        input[type="text"] { width: 80%; padding: 12px; border: 2px solid #dadce0; border-radius: 8px; font-size: 16px; outline: none; transition: 0.3s; }
+        input[type="text"]:focus { border-color: #1a73e8; }
+        button { background-color: #1a73e8; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; margin-top: 15px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #1557b0; }
+        .resultado { margin-top: 30px; padding: 20px; background-color: #e8f0fe; border-left: 5px solid #1a73e8; border-radius: 4px; text-align: left; }
+        .error { margin-top: 30px; padding: 20px; background-color: #fce8e6; border-left: 5px solid #d93025; border-radius: 4px; color: #a51d24; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola Mundo desde la Nube!</h1>
+        <p class="sub">Taller de Inteligencia Artificial Práctica</p>
+        
+        <form method="POST">
+            <input type="text" name="frase" placeholder="Escribe un modismo regional..." required>
+            <br>
+            <button type="submit">Preguntar a Gemini IA</button>
+        </form>
+
+        {% if respuesta %}
+            <div class="resultado">
+                <strong>Respuesta de la IA:</strong>
+                <p>{{ respuesta }}</p>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">
+                <strong>Detalle técnico:</strong>
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
