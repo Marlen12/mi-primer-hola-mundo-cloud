@@ -1,52 +1,52 @@
 # Guía Paso a Paso: Mi Primer Hola Mundo con Inteligencia Artificial en la Nube
 
-Este repositorio contiene el código y la guía de aprendizaje para construir un Traductor Inteligente de Modismos utilizando la infraestructura global de Google Cloud y los modelos de última generación de Gemini. 
+Este repositorio contiene la guía de aprendizaje para construir un Traductor Inteligente de Modismos utilizando la infraestructura global de Google Cloud y los modelos de Inteligencia Artificial de Gemini. 
 
-El objetivo de este taller es aprender a desplegar servidores web en la nube y conectar servicios de Inteligencia Artificial mediante APIs de manera 100% gratuita.
+El objetivo de este taller es aprender a desplegar servidores web en la nube y conectar servicios de IA mediante APIs de manera 100% gratuita.
 
 ---
 
 ## 1. Conceptos Fundamentales
 
-Antes de iniciar, es importante comprender las tres herramientas que utilizaremos:
+Antes de iniciar, es importante comprender las tres herramientas que utilizaremos hoy:
 
-* Computación en la Nube: En lugar de instalar programas en tu computadora, alquilamos una máquina virtual con sistema Linux directamente en los servidores de Google a través del navegador.
-* API y API Key: Una API es un puente de comunicación entre dos aplicaciones. La API Key funciona como una contraseña digital que nos identifica ante Google para usar sus modelos de IA.
+* Computación en la Nube: Uso de infraestructura virtual (Google Cloud Shell) para ejecutar código en servidores remotos sin depender de los recursos o la configuración de tu computadora local.
+* APIs y API Keys: Mecanismos de comunicación segura para consumir servicios externos. La llave actúa como una contraseña digital que nos identifica ante Google.
 * Gemini 2.5 Flash: El modelo de lenguaje de Google optimizado para tareas de alta velocidad y respuestas contextuales inmediatas.
 
 ---
 
 ## 2. Ruta Completa de Implementación
 
-Sigue cada uno de los siguientes pasos en orden cronológico para construir y desplegar tu aplicación en la nube.
+Sigue cada uno de los siguientes pasos en orden cronológico para construir y desplegar tu aplicación.
 
 ### Paso 1: Iniciar Sesión en la Plataforma de la Nube
-1. Abre tu navegador e ingresa al portal oficial de administración: https://console.cloud.google.com/
+1. Abre tu navegador e ingresa al portal de administración oficial: https://console.cloud.google.com/
 2. Inicia sesión utilizando tu cuenta personal de Gmail.
-3. Si es la primera vez que ingresas, el sistema te mostrará una ventana de bienvenida. Selecciona tu país de residencia, acepta los términos del servicio y haz clic en el botón de confirmación para continuar.
+3. Si es tu primera vez en la plataforma, selecciona tu país de residencia, acepta los términos de servicio del ecosistema de Google y confirma para continuar.
 
 ### Paso 2: Creación de un Proyecto de Trabajo
 Para mantener tus aplicaciones organizadas, Google requiere estructurar todo dentro de proyectos independientes.
-1. En la barra superior azul de la consola, haz clic en el menú desplegable de proyectos (se encuentra justo al lado del texto que dice Google Cloud).
-2. En la esquina superior derecha de la ventana emergente, haz clic en el botón Proyecto nuevo.
+1. En la barra superior azul de la consola de Google Cloud, haz clic en el menú desplegable de proyectos (junto al texto "Google Cloud").
+2. En la esquina superior derecha de la ventana emergente, selecciona el botón Proyecto nuevo.
 3. En el campo de nombre del proyecto, escribe: taller-ia-cloud
 4. Deja las demás opciones por defecto y haz clic en el botón azul Crear.
-5. Espera unos segundos a que la notificación del sistema indique que el proyecto está listo. Vuelve a hacer clic en el menú desplegable superior y selecciona tu nuevo proyecto de la lista: taller-ia-cloud.
+5. Espera unos segundos a que la notificación del sistema indique que el proyecto está listo. Vuelve a hacer clic en el menú desplegable superior y asegúrate de seleccionar taller-ia-cloud para empezar a trabajar en él.
 
 ### Paso 3: Generación de la Credencial de Inteligencia Artificial
-Para consumir los servicios de Gemini de forma gratuita sin activar tarjetas de crédito ni sistemas de facturación prepago, debemos generar una llave limpia.
-1. Abre una nueva pestaña en tu navegador e ingresa directamente al entorno de desarrollo de inteligencia artificial: https://aistudio.google.com/
+Para consumir los servicios de Gemini de forma gratuita sin activar tarjetas de crédito ni sistemas de facturación, debemos generar una llave limpia.
+1. Abre una nueva pestaña en tu navegador e ingresa al entorno de desarrollo de IA: https://aistudio.google.com/
 2. Haz clic en el botón azul del menú lateral izquierdo que dice Create API key (Crear llave API).
-3. Punto Crucial: Verás una opción que dice "Create API key in new project" (Crear llave API en un proyecto nuevo). Haz clic en ella. Esto forzará al sistema a mantenerte dentro de los límites del Plan Gratuito puro.
-4. Una vez generado el código alfanumérico largo, haz clic en el botón Copy (Copiar) y mantenlo guardado en tu portapapeles.
+3. Punto Crucial: Selecciona la opción "Create API key in new project" (Crear llave API en un proyecto nuevo). Esto forzará al sistema a mantenerte dentro de los límites del Plan Gratuito puro.
+4. Una vez generado el código alfanumérico largo, haz clic en el botón Copy (Copiar) y mantenlo guardado temporalmente.
 
 ### Paso 4: Activación de la Terminal Virtual (Cloud Shell)
 1. Regresa a la pestaña del navegador donde tienes abierta la Consola de Google Cloud.
-2. En la barra de herramientas de la esquina superior derecha, busca y haz clic en el icono de Activar Cloud Shell (tiene el símbolo gráfico >_).
+2. En la barra de herramientas de la esquina superior derecha, busca y haz clic en el icono de Activar Cloud Shell (identificado con el símbolo gráfico >_).
 3. En el panel inferior que se despliega, haz clic en Continuar. El sistema tardará unos segundos en encender y conectarte a una máquina virtual Linux completamente equipada de forma gratuita.
 
-### Paso 5: Configuración de Variables de Entorno
-Para que tu código de programación pueda usar la credencial de IA sin exponerla públicamente dentro del archivo de texto, la guardaremos en la memoria temporal de la terminal.
+### Paso 5: Configuración de Variables de Envorno
+Para que tu código de programación pueda usar la credencial de IA sin exponerla públicamente dentro del archivo de texto, la guardaremos en la memoria de la terminal.
 1. En la consola negra de Cloud Shell, escribe el siguiente comando, asegurándote de reemplazar el texto genérico por tu código largo copiado de AI Studio (mantén las comillas simples):
    export API_KEY='TU_LLAVE_DE_AI_STUDIO'
 2. Presiona la tecla Enter para confirmar la variable en el sistema operativo.
@@ -62,53 +62,38 @@ Para transformar un script simple en una página web interactiva utilizaremos Fl
 Utilizaremos el Editor de Código integrado en la consola para una gestión visual y cómoda de los archivos.
 1. En la barra superior de Cloud Shell, haz clic en el botón Open Editor (Abrir editor). Esto dividirá tu pantalla para mostrar un explorador visual de archivos en la parte superior.
 2. En el panel izquierdo del explorador de archivos, localiza tu directorio raíz de trabajo. Haz clic derecho y selecciona la opción de crear un nuevo archivo de texto. Nómbralo: asistente.py
-3. Abre el archivo asistente.py recién creado y pega el siguiente código lógico de Python:
+3. Abre el archivo asistente.py recién creado y añade la lógica de control de Flask que se encarga de recibir los datos del formulario, realizar la petición HTTP mediante cURL hacia la API v1 de producción de Gemini usando el modelo gemini-2.5-flash, y renderizar la plantilla.
+4. Ahora, expande la carpeta llamada templates en el menú izquierdo, haz clic derecho dentro de ella y genera un nuevo archivo llamado index.html
+5. Añade dentro de templates/index.html la estructura HTML5 con el formulario de envío, las variables dinámicas de Flask para mostrar las respuestas de la IA o los errores, y los estilos CSS responsivos.
 
-```python
-import os
-import subprocess
-import json
-from flask import Flask, request, render_template
+### Paso 8: Lanzamiento y Despliegue de la Web
+1. Haz clic en el botón Open Terminal (Abrir terminal) en la barra superior para enfocarte de nuevo en la consola negra de comandos.
+2. Enciende el servidor de desarrollo web ejecutando el intérprete de Python:
+   python3 asistente.py
+3. El sistema te indicará en texto que la aplicación ya se encuentra escuchando peticiones en el puerto 8080.
+4. Dirígete a la barra superior del entorno de Cloud Shell, ubica el icono de Vista previa en la Web (representado por una pantalla con una lupa o flecha interna) y haz clic en él.
+5. Selecciona la opción Vista previa en el puerto 8080.
 
-app = Flask(__name__)
+El entorno abrirá una pestaña independiente en tu navegador web mostrando tu aplicación corriendo en internet. Escribe cualquier término regional, presiona el botón de envío y observa cómo la inteligencia artificial procesa los datos en tiempo real.
 
-# Extraemos de forma segura la credencial guardada en la terminal
-api_key = os.environ.get("API_KEY")
+---
 
-@app.route("/", methods=["GET", "POST"])
-def home():
-    respuesta = None
-    error = None
+## 3. Instrucciones de Carga hacia GitHub
 
-    if request.method == "POST":
-        frase = request.form.get("frase")
-        
-        # Generamos la llamada directa por consola usando el protocolo seguro cURL
-        # Apuntamos a la ruta de producción v1 y al modelo estable gemini-2.5-flash
-        comando = [
-            'curl', '-s', '-X', 'POST',
-            f'[https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=](https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=){api_key}',
-            '-H', 'Content-Type: application/json',
-            '-d', json.dumps({
-                "contents": [{
-                    "parts": [{"text": f"Explica de forma muy corta, divertida y en un solo párrafo qué significa la siguiente frase o palabra: '{frase}'"}]
-                }]
-            })
-        ]
+Una vez que compruebes que todo el sistema funciona sin errores, puedes subir tu código a tu cuenta personal de GitHub directamente desde la misma consola negra de Cloud Shell.
 
-        try:
-            # Ejecutamos el subproceso en el sistema operativo Linux subyacente
-            resultado = subprocess.run(comando, capture_output=True, text=True)
-            datos = json.loads(resultado.stdout)
-            
-            if 'candidates' in datos:
-                respuesta = datos['candidates'][0]['content']['parts'][0]['text']
-            else:
-                error = f"El servidor de Google rechazó la petición: {datos.get('error', {}).get('message', 'Error de cuota o configuración')}"
-        except Exception as e:
-            error = f"Error interno del sistema: {str(e)}"
-
-    return render_template("index.html", respuesta=respuesta, error=error)
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+1. Detén el servidor web de desarrollo presionando la combinación de teclas Control + C.
+2. Inicializa el gestor de versiones Git dentro de la carpeta del proyecto:
+   git init
+3. Configura tus datos básicos de firma de código (reemplaza los valores por tus credenciales de usuario de GitHub):
+   git config --global user.email "tu-correo-registrado@gmail.com"
+   git config --global user.name "TuNombreDeUsuarioDeGitHub"
+4. Vincula tu terminal local con un repositorio remoto en la web de GitHub. Crea previamente un repositorio vacío en tu perfil web de GitHub llamado mi-primer-hola-mundo-ia, copia su dirección URL y ejecútalo en la terminal:
+   git remote add origin https://github.com/TuNombreDeUsuarioDeGitHub/mi-primer-hola-mundo-ia.git
+   git branch -M main
+5. Prepara, empaqueta y confirma todos los archivos locales creados para el envío masivo:
+   git add .
+   git commit -m "Versión final del taller web de IA con Flask y HTML estructurado"
+6. Empuja todo tu avance directamente hacia los servidores de GitHub:
+   git push -u origin main
+   (Nota de seguridad: Si la terminal te solicita la contraseña de acceso, debes ingresar tu Token de Acceso Personal de GitHub (PAT), ya que los servidores de Git no admiten el uso de contraseñas de texto plano tradicionales).
