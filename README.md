@@ -1,4 +1,4 @@
-# Guía Rápida: Mi Primer Hola Mundo con IA en la Nube
+# Guía: Mi Primer Hola Mundo en la Nube
 
 Guía práctica para desplegar un Traductor Inteligente de Modismos en la nube usando Flask y Gemini 2.5 Flash de forma gratuita.
 
