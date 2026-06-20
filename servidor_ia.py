@@ -31,7 +31,7 @@ PAGINA_HTML = """
 <body>
     <div class="container">
         <h1>¡Hola Mundo desde la Nube!</h1>
-        <p class="sub">Taller de IA en Tarija - GDG & Women Techmakers</p>
+        <p class="sub">Taller en Build With AI Tarija</p>
         
         <form method="POST">
             <input type="text" name="frase" placeholder="Escribe un modismo (ej. saice, qué churo)..." required>
