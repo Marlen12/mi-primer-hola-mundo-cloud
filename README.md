@@ -47,14 +47,22 @@ export API_KEY='TU_LLAVE_DE_AI_STUDIO'
 
 ### Paso 6: Instalar Librerías y Crear el Código con Nano
 1. Instala Flask corriendo este comando en la terminal:
-   pip3 install flask
+```
+pip3 install flask
+```
+
 2. Abre un archivo nuevo con el editor de terminal corriendo:
-   nano asistente.py
-3. Pega todo el código del proyecto (el cual ya incluye tanto la lógica de Python como la interfaz de usuario en formato de texto plano).
-4. Guarda y cierra presionando Control + O, luego Enter y finalmente Control + X.
+```
+nano asistente.py
+```
+4. Pega todo el código del proyecto (el cual ya incluye tanto la lógica de Python como la interfaz de usuario en formato de texto plano).
+5. Guarda y cierra presionando Control + O, luego Enter y finalmente Control + X.
 
 ### Paso 7: Desplegar la Web
 1. Enciende el servidor ejecutando en tu terminal:
-   python3 asistente.py
+```
+python3 asistente.py
+```
+
 2. En la barra superior de Cloud Shell, haz clic en Vista previa en la Web (icono de pantalla con lupa).
 3. Selecciona Vista previa en el puerto 8080 para abrir tu página web en internet.
