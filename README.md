@@ -30,9 +30,9 @@ Guía práctica para desplegar un Traductor Inteligente de Modismos en la nube u
 4. Crea una carpeta: mkdir mi-pagina-web
 5. Ingresa a la carpeta: cd mi-pagina-web
 6. copia lo siguiente en la terminal:
-   '''
-   echo '<html><body><h1>¡Hola Mundo desde Google Cloud!</h1><p>Mi primer taller en la nube completado :).</p></body></html>' > index.html
-   '''
+   ```terminal
+echo '<html><body><h1>¡Hola Mundo desde Google Cloud!</h1><p>Mi primer taller en la nube completado :).</p></body></html>' > index.html
+```
    
 8. Enciende el servidor con: python3 -m http.server 8080
 
