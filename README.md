@@ -1,4 +1,4 @@
-# Guía Paso a Paso: Mi Primer Hola Mundo con Inteligencia Artificial en la Nube
+# Guía Mi Primer Hola Mundo en la Nube
 
 Este repositorio contiene la guía de aprendizaje para construir un Traductor Inteligente de Modismos utilizando la infraestructura global de Google Cloud y los modelos de Inteligencia Artificial de Gemini. 
 
