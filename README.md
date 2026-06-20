@@ -34,11 +34,16 @@ Guía práctica para desplegar un Traductor Inteligente de Modismos en la nube u
 echo '<html><body><h1>¡Hola Mundo desde Google Cloud!</h1><p>Mi primer taller en la nube completado :).</p></body></html>' > index.html
 ```
    
-8. Enciende el servidor con: python3 -m http.server 8080
+8. Enciende el servidor con:
+```
+python3 -m http.server 8080
+```
 
 ### Paso 5: Configurar la Llave en la Terminal
 1. En la terminal negra de abajo, guarda tu clave ejecutando:
-   export API_KEY='TU_LLAVE_DE_AI_STUDIO'
+```
+export API_KEY='TU_LLAVE_DE_AI_STUDIO'
+```
 
 ### Paso 6: Instalar Librerías y Crear el Código con Nano
 1. Instala Flask corriendo este comando en la terminal:
