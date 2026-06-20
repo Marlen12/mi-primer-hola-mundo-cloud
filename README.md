@@ -17,13 +17,7 @@ Guía práctica para desplegar un Traductor Inteligente de Modismos en la nube u
 3. Ponle como nombre: `hola-mundo-cloud` y haz clic en **Crear**.
 4. En el mismo menú superior, selecciona el proyecto `hola-mundo-cloud` para activar tu entorno de trabajo.
 
-### Paso 3: Obtener la API Key de Gemini
-1. Entra a [Google AI Studio](https://aistudio.google.com/).
-2. Haz clic en **Create API key** en el menú izquierdo.
-3. Selecciona **"Create API key in new project"** para asegurar el Plan Gratuito.
-4. Copia la clave alfanumérica generada.
-
-### Paso 4: Activar Cloud Shell
+### Paso 3: Activar Cloud Shell
 1. Regresa a la Consola de Google Cloud.
 2. Haz clic en el icono **Activar Cloud Shell** (`>_`) en la esquina superior derecha.
 3. Selecciona **Continuar** y espera a que conecte la terminal.
@@ -38,6 +32,14 @@ echo '<html><body><h1>¡Hola Mundo desde Google Cloud!</h1><p>Mi primer taller e
 ```
 python3 -m http.server 8080
 ```
+
+##HOLA MUNDO con IA
+### Paso 4: Obtener la API Key de Gemini
+1. Entra a [Google AI Studio](https://aistudio.google.com/).
+2. Haz clic en **Create API key** en el menú izquierdo.
+3. Selecciona **"Create API key in new project"** para asegurar el Plan Gratuito.
+4. Copia la clave alfanumérica generada.
+
 
 ### Paso 5: Configurar la Llave en la Terminal
 1. En la terminal negra de abajo, guarda tu clave ejecutando:
